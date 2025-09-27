@@ -1,0 +1,318 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+/* .h3{
+  color: #fff;
+} */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+/* Navbar logo container */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;            /* spacing between image and text */
+  text-decoration: none;
+  color: inherit;      /* keep LuMInA text white */
+}
+
+/* Logo image size */
+.nav-logo img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+}
+
+/* Ensure LuMInA text looks same as before */
+.nav-logo .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;         /* restore white */
+}
+
+.nav-logo .logo span {
+  color: #ff4081;      /* keep highlight pink */
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: #ff4081;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #ff4081;
+}
+
+
+.card h3 {
+  color: #fff;
+  text-align: center;
+  transition: color 0.3s, text-shadow 0.3s;
+  animation: idleTitleGlow 3s infinite alternate;
+}
+
+.card:hover h3 {
+  color: #ff4081;
+  text-shadow: 0 0 10px #ff4081, 0 0 20px #ff1e63;
+  animation: pulseTitleGlow 1.5s infinite alternate;
+}
+
+/* Idle subtle glow */
+@keyframes idleTitleGlow {
+  from {
+    text-shadow: 0 0 4px rgba(255, 64, 129, 0.3);
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 64, 129, 0.6);
+  }
+}
+
+/* Stronger glow on hover */
+@keyframes pulseTitleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 64, 129, 0.6), 0 0 20px rgba(255, 64, 129, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 64, 129, 0.9), 0 0 40px rgba(255, 64, 129, 0.7);
+  }
+}
+
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("https://picsum.photos/1920/1080?random") no-repeat center/cover;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero-content h1 span {
+  color: #ff4081;
+}
+.hero-content p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.btn {
+  padding: 10px 20px;
+  background: #ff4081;
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.btn:hover {
+  background: #ff1e63;
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  padding: 80px 40px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ff4081;
+}
+
+/* Event Cards */
+.event-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* .card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  border: 2px solid transparent;
+} */
+
+/* .card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 64, 129, 0.5);
+  border: 2px solid #ff4081;
+} */
+/* 
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.6);
+  border: 2px solid #ff4081;
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.4), 0 0 30px rgba(255, 64, 129, 0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.8), 0 0 50px rgba(255, 64, 129, 0.5);
+  }
+} */
+
+
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  /* Subtle idle glow */
+  animation: idleGlow 3s infinite alternate;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border: 2px solid #ff4081;
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+/* Subtle breathing glow for idle state */
+@keyframes idleGlow {
+  from {
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.2);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+  }
+}
+
+/* Stronger pulsing glow on hover */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.4), 0 0 30px rgba(255, 64, 129, 0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.8), 0 0 50px rgba(255, 64, 129, 0.5);
+  }
+}
+
+
+/* About */
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Register */
+.register form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.register input, .register select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+.register button {
+  align-self: center;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Animations */
+.animate-fade {
+  animation: fadeIn 2s ease-in-out;
+}
+.animate-slide {
+  animation: slideIn 2s ease-out;
+}
+.animate-zoom {
+  animation: zoomIn 1.5s ease-in-out;
+}
+.animate-up {
+  opacity: 1;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.animate-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.event-cards a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-cards .card {
+  display: block;
+  cursor: pointer;
+}

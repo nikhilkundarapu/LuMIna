@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration - LuMInA 2K25</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Navbar logo adjustments */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      gap: 10px;
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+
+    /* Form field base styling */
+.register input,
+.register select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background: #111;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.register input:hover,
+.register select:hover {
+  border-color: #ff4081;
+  box-shadow: 0 0 8px rgba(255, 64, 129, 0.5);
+}
+
+/* Focus effect (when clicked/typing) */
+.register input:focus,
+.register select:focus {
+  outline: none;
+  border-color: #ff4081;
+  box-shadow: 0 0 12px rgba(255, 64, 129, 0.8);
+}
+
+/* Button hover */
+.register button {
+  background: #ff4081;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register button:hover {
+  background: #ff1e63;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 30, 99, 0.7);
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <img src="LuMInA Logo.png" alt="LuMInA Logo">
+        <div class="logo">LuMInA-<span>2K25</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Registration Section -->
+  <section class="register">
+    <h2 class="section-title" id="eventTitle">Registration Form</h2>
+    <form id="regForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="text" name="roll" placeholder="Roll Number" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+
+      <select name="branch" required>
+        <option value="">Select Branch</option>
+        <option value="AIML">AIML</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="CSM">CSM</option>
+        <option value="AIDS">AIDS</option>
+        <option value="CSG">CSG</option>
+      </select>
+
+      <select name="year" required>
+        <option value="">Select Year</option>
+        <option value="1st">1st Year</option>
+        <option value="2nd">2nd Year</option>
+        <option value="3rd">3rd Year</option>
+        <option value="4th">4th Year</option>
+      </select>
+
+      <select name="event" id="eventSelect" required>
+        <option value="">Select Event</option>
+        <option value="TechQuit">TechQuit</option>
+        <option value="Artify">Artify</option>
+        <option value="Logic-League">Logic-League</option>
+        <option value="Howzaat">Howzaat</option>
+        <option value="Tactical-Showdown">Tactical-Showdown</option>
+        <option value="Rangasthalam">Rangasthalam</option>
+      </select>
+
+      <button type="submit" class="btn">Proceed to Pay</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cultural Fest | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Auto-select event & set title
+    const params = new URLSearchParams(window.location.search);
+    const eventName = params.get("event");
+    if (eventName) {
+      const eventSelect = document.getElementById("eventSelect");
+      const eventTitle = document.getElementById("eventTitle");
+
+      for (let option of eventSelect.options) {
+        if (option.value === eventName) {
+          option.selected = true;
+          eventTitle.textContent = "Register for " + eventName;
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
