@@ -123,7 +123,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), src="LuMIna Logo.png" no-repeat center/cover;
+ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("https://picsum.photos/1920/1080?random") no-repeat center/cover;
 }
 .hero-content h1 {
   font-size: 3rem;
@@ -316,4 +316,5 @@ footer {
   display: block;
   cursor: pointer;
 }
+
 
